@@ -25,10 +25,25 @@ bool db_mysql_connect(const char *host, const char *user, const char *password, 
 int db_mysql_query(const char *query)
 {
 	return	mysql_query(mySQL,query);
-
 }
 
 const char *db_mysql_error()
 {
 	return mysql_error(mySQL);
+}
+
+MYSQL_RES *db_mysql_result()
+{
+	return mysql_store_result(mySQL);
+}
+
+MYSQL_ROW db_mysql_fetch_row(MYSQL_RES *result)
+{
+	return mysql_fetch_row(result);
+
+}
+
+int db_mysql_field_count()
+{
+	return mysql_field_count(mySQL);
 }
