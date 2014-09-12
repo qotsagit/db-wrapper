@@ -65,3 +65,22 @@ int db_field_count()
 	}
 
 }
+
+long long db_num_rows(void *result)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_num_rows(result);
+		default:				return db_mysql_num_rows(result);
+	}
+
+}
+
+void db_free_result(void *result)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_free_result(result);
+		default:				return db_mysql_free_result(result);
+	}
+}

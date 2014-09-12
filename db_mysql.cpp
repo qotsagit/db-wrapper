@@ -47,3 +47,13 @@ int db_mysql_field_count()
 {
 	return mysql_field_count(mySQL);
 }
+
+long long db_mysql_num_rows(void *result)
+{
+	return mysql_num_rows((MYSQL_RES*)result);
+}
+
+void db_mysql_free_result(void *result)
+{
+	mysql_free_result((MYSQL_RES*)result);
+}

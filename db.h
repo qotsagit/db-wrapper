@@ -8,5 +8,6 @@ void *db_fetch_row(void *result);
 void *db_result();
 const char *db_error();
 int db_field_count();
-
+long long db_num_rows(void *result);
+void db_free_result(void *result);
 #endif
