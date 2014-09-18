@@ -1,3 +1,4 @@
+#include <wx/wx.h>
 #include <Windows.h>
 #include <stdio.h>
 #include "mysql.h"
@@ -83,4 +84,20 @@ void db_free_result(void *result)
 		case DB_ENGINE_MYSQL:	return db_mysql_free_result(result);
 		default:				return db_mysql_free_result(result);
 	}
+}
+
+// taki ma³y wraper ¿eby nie pisaæ ci¹gle tego samego
+bool my_query(wxString sql)
+{
+#ifdef DEBUG_SQL
+	wxMessageBox (sql);
+#endif
+	
+	if(db_query(sql.mb_str(wxConvUTF8))  != 0)
+	{
+		wxMessageBox (db_error());
+		return false;
+	}
+	
+	return true;
 }
