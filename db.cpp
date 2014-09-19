@@ -101,3 +101,19 @@ bool my_query(wxString sql)
 	
 	return true;
 }
+
+void db_history(int uid, const char *module, const char *action )
+{
+	wxString sql = wxString::Format(_("SELECT * FROM `%s` WHERE name='%s_%s'"),TABLE_RIGHT,module,action);
+	my_query(sql);
+
+	void *result = db_result();
+	char **row = (char**)db_fetch_row(result);
+	
+	sql = wxString::Format(_("INSERT INTO `%s` SET id_user='%d', id_right='%s'"),TABLE_HISTORY, uid, row[FID_RIGHT_ID]);
+	my_query(sql);
+		
+
+	db_free_result(result);
+
+}

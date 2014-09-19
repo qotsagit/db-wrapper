@@ -1,7 +1,17 @@
 #ifndef __DB_H
 #define __DB_H
 
-// pola tabeli USER
+// nazwy tabel
+#define TABLE_USER					"user"
+#define TABLE_GROUP					"group"
+#define TABLE_GROUP_RIGHT			"group_right"
+#define TABLE_USER_GROUP			"user_group"
+#define TABLE_RIGHT					"right"
+#define TABLE_OBJECT				"object"
+#define TABLE_HISTORY				"history"
+
+// pola tabeli USER.....................................
+
 #define FID_USER_ID					0
 #define FID_USER_NICK				1
 #define FID_USER_FIRST_NAME			2
@@ -12,7 +22,6 @@
 #define FID_USER_EMAIL				7
 #define FID_USER_INFO				8
 #define	FID_USER_EXPIRE_DATE		10
-
 #define FNAME_USER_ID				"id"
 #define FNAME_USER_NICK				"nick"
 #define FNAME_USER_FIRST_NAME		"first_name"
@@ -24,32 +33,71 @@
 #define FNAME_USER_INFO				"info"
 #define	FNAME_USER_EXPIRE_DATE		"expire_date"
 
+//pola tabeli GROUP ..................................
 
-//pola tabeli GROUP
-#define FID_GROUP_ID		0
-#define FID_GROUP_NAME		1
-#define FID_GROUP_INFO		2
-//nazwy pól
-#define FNAME_GROUP_ID		"id"
-#define FNAME_GROUP_NAME	"name"
-#define FNAME_GROUP_INFO	"info"
+#define FID_GROUP_ID				0
+#define FID_GROUP_NAME				1
+#define FID_GROUP_INFO				2
+#define FNAME_GROUP_ID				"id"
+#define FNAME_GROUP_NAME			"name"
+#define FNAME_GROUP_INFO			"info"
 
+// pola tabeli USER_GROUP............................
 
-// pola tabeli USER_GROUP
-#define FID_USER_GROUP_USER_ID	0
-#define FID_USER_GROUP_GROUP_ID	1
+#define FID_USER_GROUP_USER_ID		0
+#define FID_USER_GROUP_GROUP_ID		1
 
-// pola tabeli RIGHT
-#define FID_RIGHT_ID	0
-#define FID_RIGHT_NAME	1
-#define FID_RIGHT_INFO	2
+// pola tabeli RIGHT.................................
 
-// nazwy tabel
-#define TABLE_USER "navi_vts.user"
-#define TABLE_GROUP "navi_vts.group"
-#define TABLE_GROUP_RIGHT "navi_vts.group_right"
-#define TABLE_USER_GROUP "navi_vts.user_group"
-#define TABLE_RIGHT "navi_vts.right"
+#define FID_RIGHT_ID				0
+#define FID_RIGHT_NAME				1
+#define FID_RIGHT_INFO				2
+
+// pola tabeli OBJECTS...............................
+// tabela staw,p³aw, itp
+#define FID_OBJECT_ID				0
+#define FID_OBJECT_ID_AREA			1
+#define FID_OBJECT_ID_SEAWAY		2
+#define FID_OBJECT_ID_TYPE			3
+#define FID_OBJECT_NUMBER			4
+#define FID_OBJECT_LON				5
+#define FID_OBJECT_LAT				6
+#define FNAME_OBJECT_ID				"id"
+#define FNAME_OBJECT_ID_AREA		"id_area"
+#define FNAME_OBJECT_ID_SEAWAY		"id_seaway"
+#define FNAME_OBJECT_ID_TYPE		"id_type"
+#define FNAME_OBJECT_NUMBER			"number"
+#define FNAME_OBJECT_LON			"lon"
+#define FNAME_OBJECT_LAT			"lat"
+
+// pola tabeli OBJECTS_AREA..........................
+
+#define FID_OBJECT_AREA_ID			0
+#define FID_OBJECT_AREA_NAME		1
+#define FNAME_OBJECT_AREA_ID		"id"
+#define FNAME_OBJECT_AREA_NAME		"name"
+
+// pola tabeli OBJECTS_SEAWAY........................
+
+#define FID_OBJECT_SEAWAY_ID		0
+#define FID_OBJECT_SEAWAY_NAME	1
+#define FNAME_OBJECT_SEAWAY_ID		"id"
+#define FNAME_OBJECT_SEAWAY_NAME	"name"
+
+// pola tabeli OBJECTS_TYPE........................
+
+#define FID_OBJECT_TYPE_ID			0
+#define FID_OBJECT_TYPE_NAME		1
+#define FNAME_OBJECT_TYPE_ID		"id"
+#define FNAME_OBJECT_TYPE_NAME		"name"
+
+// pola tabeli HISTORY.............................
+
+#define FID_HISTORY_ID_USER			0
+#define FID_HISTORY_ID_RIGHT		1
+
+#define FNAME_HISTORY_ID_USER		"id_user"
+#define FNAME_HISTORY_ID_RIGHT		"id_right"
 
 
 void db_set_engine(int engine);
@@ -61,5 +109,6 @@ const char *db_error();
 int db_field_count();
 long long db_num_rows(void *result);
 void db_free_result(void *result);
+void db_history(int uid, const char *module, const char *action );
 bool my_query(wxString sql);
 #endif
