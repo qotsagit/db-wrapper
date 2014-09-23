@@ -8,7 +8,10 @@
 #define TABLE_USER_GROUP			"user_group"
 #define TABLE_RIGHT					"right"
 #define TABLE_OBJECT				"object"
+#define TABLE_AREA					"area"
+#define TABLE_SEAWAY				"seaway"
 #define TABLE_HISTORY				"history"
+#define TABLE_LIGHT					"light"
 
 // pola tabeli USER.....................................
 
@@ -22,6 +25,7 @@
 #define FID_USER_EMAIL				7
 #define FID_USER_INFO				8
 #define	FID_USER_EXPIRE_DATE		10
+#define FID_USER_BUILT_IN			11
 #define FNAME_USER_ID				"id"
 #define FNAME_USER_NICK				"nick"
 #define FNAME_USER_FIRST_NAME		"first_name"
@@ -70,26 +74,30 @@
 #define FNAME_OBJECT_LON			"lon"
 #define FNAME_OBJECT_LAT			"lat"
 
-// pola tabeli OBJECTS_AREA..........................
+// pola tabeli AREA..........................
 
-#define FID_OBJECT_AREA_ID			0
-#define FID_OBJECT_AREA_NAME		1
-#define FNAME_OBJECT_AREA_ID		"id"
-#define FNAME_OBJECT_AREA_NAME		"name"
+#define FID_AREA_ID			0
+#define FID_AREA_NAME		1
+#define FID_AREA_INFO		2
+#define FNAME_AREA_ID		"id"
+#define FNAME_AREA_NAME		"name"
+#define FNAME_AREA_INFO		"info"
 
-// pola tabeli OBJECTS_SEAWAY........................
+// pola tabeli SEAWAY........................
 
-#define FID_OBJECT_SEAWAY_ID		0
-#define FID_OBJECT_SEAWAY_NAME	1
-#define FNAME_OBJECT_SEAWAY_ID		"id"
-#define FNAME_OBJECT_SEAWAY_NAME	"name"
+#define FID_SEAWAY_ID		0
+#define FID_SEAWAY_NAME		1
+#define FID_SEAWAY_INFO		2
+#define FNAME_SEAWAY_ID		"id"
+#define FNAME_SEAWAY_NAME	"name"
+#define FNAME_SEAWAY_INFO	"info"	
 
-// pola tabeli OBJECTS_TYPE........................
+// pola tabeli TYPE........................
 
-#define FID_OBJECT_TYPE_ID			0
-#define FID_OBJECT_TYPE_NAME		1
-#define FNAME_OBJECT_TYPE_ID		"id"
-#define FNAME_OBJECT_TYPE_NAME		"name"
+#define FID_TYPE_ID			0
+#define FID_TYPE_NAME		1
+#define FNAME_TYPE_ID		"id"
+#define FNAME_TYPE_NAME		"name"
 
 // pola tabeli HISTORY.............................
 
@@ -98,6 +106,17 @@
 
 #define FNAME_HISTORY_ID_USER		"id_user"
 #define FNAME_HISTORY_ID_RIGHT		"id_right"
+
+//pola tabeli LIGHT................................
+
+#define FID_LIGHT_ID			0
+#define FID_LIGHT_NAME			1
+#define FID_LIGHT_INFO			2
+#define FNAME_LIGHT_ID		"id"
+#define FNAME_LIGHT_NAME	"name"
+#define FNAME_LIGHT_INFO	"info"
+
+
 
 
 void db_set_engine(int engine);
