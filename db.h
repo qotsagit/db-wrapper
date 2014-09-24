@@ -12,6 +12,7 @@
 #define TABLE_SEAWAY				"seaway"
 #define TABLE_HISTORY				"history"
 #define TABLE_LIGHT					"light"
+#define TABLE_BATTERY				"battery"
 
 // pola tabeli USER.....................................
 
@@ -99,6 +100,20 @@
 #define FNAME_TYPE_ID		"id"
 #define FNAME_TYPE_NAME		"name"
 
+//pola tabeli BATTERY...........................
+
+#define FID_BATTERY_ID			0
+#define FID_BATTERY_NAME		1
+#define FID_BATTERY_TYPE		2
+#define FID_BATTERY_CAPACITY	3
+#define FID_BATTERY_INFO		4
+
+#define FNAME_BATTERY_ID		"id"
+#define FNAME_BATTERY_NAME		"name"
+#define FNAME_BATTERY_TYPE		"type"
+#define FNAME_BATTERY_CAPACITY	"capacity"
+#define FNAME_BATTERY_INFO		"info"
+
 // pola tabeli HISTORY.............................
 
 #define FID_HISTORY_ID_USER			0
@@ -115,6 +130,7 @@
 #define FNAME_LIGHT_ID		"id"
 #define FNAME_LIGHT_NAME	"name"
 #define FNAME_LIGHT_INFO	"info"
+
 
 
 
