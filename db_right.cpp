@@ -47,7 +47,7 @@ bool db_check_right(const char *module, const char *action, int uid)
 	count = db_num_rows(result);
 
 	bool res = false;
-	if(count > 1)
+	if(count > 0)
 		res = true;
 	
 	return res;

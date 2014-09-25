@@ -18,7 +18,7 @@
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
 	
-#define MODULE_SEAWAY "area"
+#define MODULE_SEAWAY "seaway"
 	#define ACTION_NEW "new"
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
