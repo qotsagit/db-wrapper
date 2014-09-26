@@ -13,6 +13,7 @@
 #define TABLE_HISTORY				"history"
 #define TABLE_LIGHT					"light"
 #define TABLE_BATTERY				"battery"
+#define TABLE_COMMUNICATION			"communication"
 
 // pola tabeli USER.....................................
 
@@ -132,7 +133,14 @@
 #define FNAME_LIGHT_INFO	"info"
 
 
+//pola tabeli COMMUNICATION.......................
 
+#define FID_COMMUNICATION_ID		0
+#define FID_COMMUNICATION_NAME		1
+#define FID_COMMUNICATION_INFO		2
+#define FNAME_COMMUNICATION_ID		"id"
+#define FNAME_COMMUNICATION_NAME	"name"
+#define FNAME_COMMUNICATION_INFO	"info"
 
 
 void db_set_engine(int engine);
