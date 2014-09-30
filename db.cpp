@@ -95,7 +95,7 @@ bool my_query(wxString sql)
 	
 	if(db_query(sql.mb_str(wxConvUTF8))  != 0)
 	{
-		wxMessageBox (db_error());
+		wxLogError(db_error());
 		return false;
 	}
 	

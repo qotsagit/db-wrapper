@@ -16,6 +16,7 @@
 #define TABLE_COMMUNICATION			"communication"
 #define TABLE_FLASH					"flash"
 #define TABLE_BULB					"bulb"
+#define TABLE_SYMBOL_TYPE			"symbol_type"
 
 // pola tabeli USER
 
@@ -100,8 +101,10 @@
 
 #define FID_SYMBOL_TYPE_ID			0
 #define FID_SYMBOL_TYPE_NAME		1
+#define FID_SYMBOL_TYPE_INFO		2
 #define FNAME_SYMBOL_TYPE_ID		"id"
 #define FNAME_SYMBOL_TYPE_NAME		"name"
+#define FNAME_SYMBOL_TYPE_INFO		"info"
 
 //pola tabeli BATTERY
 

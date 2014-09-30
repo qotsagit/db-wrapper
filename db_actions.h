@@ -48,6 +48,13 @@
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
 
+#define MODULE_SYMBOL_TYPE "symbol_type"
+	#define ACTION_NEW "new"
+	#define ACTION_EDIT "edit"
+	#define ACTION_DELETE "delete"
+
+
+
 #endif
 
 
