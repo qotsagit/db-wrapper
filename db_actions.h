@@ -38,6 +38,16 @@
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
 
+#define MODULE_FLASH "flash"
+	#define ACTION_NEW "new"
+	#define ACTION_EDIT "edit"
+	#define ACTION_DELETE "delete"
+
+#define MODULE_BULB "bulb"
+	#define ACTION_NEW "new"
+	#define ACTION_EDIT "edit"
+	#define ACTION_DELETE "delete"
+
 #endif
 
 

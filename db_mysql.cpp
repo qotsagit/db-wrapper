@@ -24,7 +24,7 @@ bool db_mysql_connect(const char *host, const char *user, const char *password, 
 
 int db_mysql_query(const char *query)
 {
-	return	mysql_query(mySQL,query);
+	return mysql_query(mySQL,query);
 }
 
 const char *db_mysql_error()
