@@ -17,6 +17,8 @@
 #define TABLE_FLASH					"flash"
 #define TABLE_BULB					"bulb"
 #define TABLE_SYMBOL_TYPE			"symbol_type"
+#define TABLE_LANTERN				"lantern"
+#define TABLE_CHANGER				"changer"
 
 // pola tabeli USER
 
@@ -109,13 +111,10 @@
 //pola tabeli BATTERY
 
 #define FID_BATTERY_ID			0
-#define FID_BATTERY_NAME		1
-#define FID_BATTERY_TYPE		2
-#define FID_BATTERY_CAPACITY	3
-#define FID_BATTERY_INFO		4
-
+#define FID_BATTERY_TYPE		1
+#define FID_BATTERY_CAPACITY	2
+#define FID_BATTERY_INFO		3
 #define FNAME_BATTERY_ID		"id"
-#define FNAME_BATTERY_NAME		"name"
 #define FNAME_BATTERY_TYPE		"type"
 #define FNAME_BATTERY_CAPACITY	"capacity"
 #define FNAME_BATTERY_INFO		"info"
@@ -124,7 +123,6 @@
 
 #define FID_HISTORY_ID_USER			0
 #define FID_HISTORY_ID_RIGHT		1
-
 #define FNAME_HISTORY_ID_USER		"id_user"
 #define FNAME_HISTORY_ID_RIGHT		"id_right"
 
@@ -151,13 +149,11 @@
 //pola tabeli BULB
 
 #define FID_BULB_ID			0
-#define FID_BULB_NAME		1
-#define FID_BULB_TYPE		2
-#define FID_BULB_VOLTAGE	3
-#define FID_BULB_POWER		4
-#define FID_BULB_INFO		5
+#define FID_BULB_TYPE		1
+#define FID_BULB_VOLTAGE	2
+#define FID_BULB_POWER		3
+#define FID_BULB_INFO		4
 #define FNAME_BULB_ID		"id"
-#define FNAME_BULB_NAME		"name"
 #define FNAME_BULB_TYPE		"type"
 #define FNAME_BULB_VOLTAGE	"voltage"
 #define FNAME_BULB_POWER	"power"
@@ -165,14 +161,28 @@
 
 // pola tabeli FLASH
 #define FID_FLASH_ID		0
-#define FID_FLASH_NAME		1
-#define FID_FLASH_TYPE		2
-#define FID_FLASH_INFO		3
+#define FID_FLASH_TYPE		1
+#define FID_FLASH_INFO		2
 #define FNAME_FLASH_ID		"id"
-#define FNAME_FLASH_NAME	"name"
 #define FNAME_FLASH_TYPE	"type"
 #define FNAME_FLASH_INFO	"info"
 
+//pola tabeli LANTERN
+
+#define FID_LANTERN_ID		0
+#define FID_LANTERN_TYPE	1
+#define FID_LANTERN_INFO	2
+#define FNAME_LANTERN_ID	"id"
+#define FNAME_LANTERN_TYPE	"type"
+#define FNAME_LANTERN_INFO	"info"
+
+//pola tabeli CHANGER
+#define FID_CHANGER_ID		0
+#define FID_CHANGER_TYPE	1
+#define FID_CHANGER_INFO	2
+#define FNAME_CHANGER_ID	"id"
+#define FNAME_CHANGER_TYPE	"type"
+#define FNAME_CHANGER_INFO	"info"
 
 
 void db_set_engine(int engine);

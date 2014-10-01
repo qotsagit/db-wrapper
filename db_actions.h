@@ -53,6 +53,15 @@
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
 
+#define MODULE_LANTERN "lantern"
+	#define ACTION_NEW "new"
+	#define ACTION_EDIT "edit"
+	#define ACTION_DELETE "delete"
+
+#define MODULE_LANTERN "changer"
+	#define ACTION_NEW "new"
+	#define ACTION_EDIT "edit"
+	#define ACTION_DELETE "delete"
 
 
 #endif
