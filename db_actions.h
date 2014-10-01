@@ -58,7 +58,12 @@
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
 
-#define MODULE_LANTERN "changer"
+#define MODULE_CHANGER "changer"
+	#define ACTION_NEW "new"
+	#define ACTION_EDIT "edit"
+	#define ACTION_DELETE "delete"
+
+#define MODULE_SOLAR "solar"
 	#define ACTION_NEW "new"
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"

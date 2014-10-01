@@ -19,6 +19,7 @@
 #define TABLE_SYMBOL_TYPE			"symbol_type"
 #define TABLE_LANTERN				"lantern"
 #define TABLE_CHANGER				"changer"
+#define TABLE_SOLAR					"solar"
 
 // pola tabeli USER
 
@@ -183,6 +184,14 @@
 #define FNAME_CHANGER_ID	"id"
 #define FNAME_CHANGER_TYPE	"type"
 #define FNAME_CHANGER_INFO	"info"
+
+//pola tabeli SOLAR
+#define FID_SOLAR_ID		0
+#define FID_SOLAR_TYPE		1
+#define FID_SOLAR_INFO		2
+#define FNAME_SOLAR_ID		"id"
+#define FNAME_SOLAR_TYPE	"type"
+#define FNAME_SOLAR_INFO	"info"
 
 
 void db_set_engine(int engine);
