@@ -14,60 +14,28 @@
 	#define ACTION_RIGHT "right"
 
 #define MODULE_AREA "area"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-	
 #define MODULE_SEAWAY "seaway"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_BATTERY "battery"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_LIGHT "light"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_COMMUNICATION "communication"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_FLASH "flash"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_BULB "bulb"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_SYMBOL_TYPE "symbol_type"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_LANTERN "lantern"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_CHANGER "changer"
-	#define ACTION_NEW "new"
-	#define ACTION_EDIT "edit"
-	#define ACTION_DELETE "delete"
-
 #define MODULE_SOLAR "solar"
+#define MODULE_REGULATOR "regulator"
+#define MODULE_AC_ADAPTER "acadapter"
+#define MODULE_SYNCHRONIZATION "acadapter"
+#define MODULE_TELEMETRY "telemetry"
+#define MODULE_COLLECTION "collection"
+#define MODULE_ANTENNA "antenna"
+#define MODULE_LIGHTNING "lightning"
+#define MODULE_WIND_GENERATOR "wind_generator"
+#define MODULE_NAUTOFON "nautofon"
 	#define ACTION_NEW "new"
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
-
 
 #endif
 

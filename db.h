@@ -20,9 +20,17 @@
 #define TABLE_LANTERN				"lantern"
 #define TABLE_CHANGER				"changer"
 #define TABLE_SOLAR					"solar"
-
+#define TABLE_REGULATOR				"regulator"
+#define TABLE_AC_ADAPTER			"ac_adapter"
+#define TABLE_SYNCHRONIZATION		"synchronization"
+#define TABLE_TELEMETRY				"telemetry"
+#define TABLE_COLLECTION			"collection"
+#define TABLE_ANTENNA				"antenna"
+#define TABLE_LIGHTNING				"lightning"
+#define TABLE_WIND_GENERATOR		"wind_generator"
+#define TABLE_NAUTOFON				"nautofon"
+	
 // pola tabeli USER
-
 #define FID_USER_ID					0
 #define FID_USER_NICK				1
 #define FID_USER_FIRST_NAME			2
@@ -46,7 +54,6 @@
 #define	FNAME_USER_EXPIRE_DATE		"expire_date"
 
 //pola tabeli GROUP
-
 #define FID_GROUP_ID				0
 #define FID_GROUP_NAME				1
 #define FID_GROUP_INFO				2
@@ -55,12 +62,10 @@
 #define FNAME_GROUP_INFO			"info"
 
 // pola tabeli USER_GROUP
-
 #define FID_USER_GROUP_USER_ID		0
 #define FID_USER_GROUP_GROUP_ID		1
 
 // pola tabeli RIGHT
-
 #define FID_RIGHT_ID				0
 #define FID_RIGHT_NAME				1
 #define FID_RIGHT_INFO				2
@@ -83,7 +88,6 @@
 #define FNAME_SYMBOL_LAT			"lat"
 
 // pola tabeli AREA
-
 #define FID_AREA_ID			0
 #define FID_AREA_NAME		1
 #define FID_AREA_INFO		2
@@ -92,7 +96,6 @@
 #define FNAME_AREA_INFO		"info"
 
 // pola tabeli SEAWAY
-
 #define FID_SEAWAY_ID		0
 #define FID_SEAWAY_NAME		1
 #define FID_SEAWAY_INFO		2
@@ -101,7 +104,6 @@
 #define FNAME_SEAWAY_INFO	"info"	
 
 // pola tabeli SYMBOL_TYPE
-
 #define FID_SYMBOL_TYPE_ID			0
 #define FID_SYMBOL_TYPE_NAME		1
 #define FID_SYMBOL_TYPE_INFO		2
@@ -110,7 +112,6 @@
 #define FNAME_SYMBOL_TYPE_INFO		"info"
 
 //pola tabeli BATTERY
-
 #define FID_BATTERY_ID			0
 #define FID_BATTERY_TYPE		1
 #define FID_BATTERY_CAPACITY	2
@@ -121,14 +122,12 @@
 #define FNAME_BATTERY_INFO		"info"
 
 // pola tabeli HISTORY
-
 #define FID_HISTORY_ID_USER			0
 #define FID_HISTORY_ID_RIGHT		1
 #define FNAME_HISTORY_ID_USER		"id_user"
 #define FNAME_HISTORY_ID_RIGHT		"id_right"
 
 //pola tabeli LIGHT
-
 #define FID_LIGHT_ID			0
 #define FID_LIGHT_NAME			1
 #define FID_LIGHT_INFO			2
@@ -136,9 +135,7 @@
 #define FNAME_LIGHT_NAME	"name"
 #define FNAME_LIGHT_INFO	"info"
 
-
 //pola tabeli COMMUNICATION
-
 #define FID_COMMUNICATION_ID		0
 #define FID_COMMUNICATION_NAME		1
 #define FID_COMMUNICATION_INFO		2
@@ -146,9 +143,7 @@
 #define FNAME_COMMUNICATION_NAME	"name"
 #define FNAME_COMMUNICATION_INFO	"info"
 
-
 //pola tabeli BULB
-
 #define FID_BULB_ID			0
 #define FID_BULB_TYPE		1
 #define FID_BULB_VOLTAGE	2
@@ -169,7 +164,6 @@
 #define FNAME_FLASH_INFO	"info"
 
 //pola tabeli LANTERN
-
 #define FID_LANTERN_ID		0
 #define FID_LANTERN_TYPE	1
 #define FID_LANTERN_INFO	2
@@ -193,6 +187,78 @@
 #define FNAME_SOLAR_TYPE	"type"
 #define FNAME_SOLAR_INFO	"info"
 
+//pola tabeli REGULATOR
+#define FID_REGULATOR_ID		0
+#define FID_REGULATOR_TYPE		1
+#define FID_REGULATOR_INFO		2
+#define FNAME_REGULATOR_ID		"id"
+#define FNAME_REGULATOR_TYPE	"type"
+#define FNAME_REGULATOR_INFO	"info"
+
+//pola tabeli AC_ADAPTER
+#define FID_AC_ADAPTER_ID		0
+#define FID_AC_ADAPTER_TYPE		1
+#define FID_AC_ADAPTER_INFO		2
+#define FNAME_AC_ADAPTER_ID		"id"
+#define FNAME_AC_ADAPTER_TYPE	"type"
+#define FNAME_AC_ADAPTER_INFO	"info"
+
+//pola tabeli SYNCHRONIZATION
+#define FID_SYNCHRONIZATION_ID		0
+#define FID_SYNCHRONIZATION_TYPE	1
+#define FID_SYNCHRONIZATION_INFO	2
+#define FNAME_SYNCHRONIZATION_ID	"id"
+#define FNAME_SYNCHRONIZATION_TYPE	"type"
+#define FNAME_SYNCHRONIZATION_INFO	"info"
+
+//pola tabeli TELEMETRY
+#define FID_TELEMETRY_ID		0
+#define FID_TELEMETRY_TYPE		1
+#define FID_TELEMETRY_INFO		2
+#define FNAME_TELEMETRY_ID		"id"
+#define FNAME_TELEMETRY_TYPE	"type"
+#define FNAME_TELEMETRY_INFO	"info"
+
+//pola tabeli COLLECTION
+#define FID_COLLECTION_ID		0
+#define FID_COLLECTION_TYPE		1
+#define FID_COLLECTION_INFO		2
+#define FNAME_COLLECTION_ID		"id"
+#define FNAME_COLLECTION_TYPE	"type"
+#define FNAME_COLLECTION_INFO	"info"
+
+//pola tabeli ANTENNA
+#define FID_ANTENNA_ID		0
+#define FID_ANTENNA_TYPE	1
+#define FID_ANTENNA_INFO	2
+#define FNAME_ANTENNA_ID	"id"
+#define FNAME_ANTENNA_TYPE	"type"
+#define FNAME_ANTENNA_INFO	"info"
+
+//pola tabeli LIGHTNING
+#define FID_LIGHTNING_ID		0
+#define FID_LIGHTNING_TYPE		1
+#define FID_LIGHTNING_INFO		2
+#define FNAME_LIGHTNING_ID		"id"
+#define FNAME_LIGHTNING_TYPE	"type"
+#define FNAME_LIGHTNING_INFO	"info"
+
+//pola tabeli WIND_GENERATOR
+#define FID_WIND_GENERATOR_ID		0
+#define FID_WIND_GENERATOR_TYPE		1
+#define FID_WIND_GENERATOR_INFO		2
+#define FNAME_WIND_GENERATOR_ID		"id"
+#define FNAME_WIND_GENERATOR_TYPE	"type"
+#define FNAME_WIND_GENERATOR_INFO	"info"
+
+//pola tabeli NAUTOFON
+#define FID_NAUTOFON_ID		0
+#define FID_NAUTOFON_TYPE	1
+#define FID_NAUTOFON_INFO	2
+#define FNAME_NAUTOFON_ID	"id"
+#define FNAME_NAUTOFON_TYPE	"type"
+#define FNAME_NAUTOFON_INFO	"info"
+
 
 void db_set_engine(int engine);
 bool db_connect(const char *host, const char *user, const char *password, const char *db);
@@ -205,4 +271,5 @@ long long db_num_rows(void *result);
 void db_free_result(void *result);
 void db_history(int uid, const char *module, const char *action );
 bool my_query(wxString sql);
+
 #endif
