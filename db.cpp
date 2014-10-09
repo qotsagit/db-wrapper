@@ -86,6 +86,15 @@ void db_free_result(void *result)
 	}
 }
 
+int db_last_insert_id()
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_insert_id();
+		default:				return db_mysql_insert_id();
+	}
+}
+
 // taki ma³y wraper ¿eby nie pisaæ ci¹gle tego samego
 bool my_query(wxString sql)
 {
@@ -110,7 +119,7 @@ void db_history(int uid, const char *module, const char *action )
 	void *result = db_result();
 	char **row = (char**)db_fetch_row(result);
 	
-	sql = wxString::Format(_("INSERT INTO `%s` SET id_user='%d', id_right='%s'"),TABLE_HISTORY, uid, row[FID_RIGHT_ID]);
+	sql = wxString::Format(_("INSERT INTO `%s` SET id_user='%d', id_right='%s'"),TABLE_HISTORY, uid, row[FI_RIGHT_ID]);
 	my_query(sql);
 		
 

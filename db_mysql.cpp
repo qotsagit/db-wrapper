@@ -15,9 +15,9 @@ bool db_mysql_connect(const char *host, const char *user, const char *password, 
 	if(mysql_errno(mySQL) !=0)
 		return false;
         
-    mysql_query(mySQL,"SET NAMES utf8");
+    mysql_query(mySQL,"SET NAMES utf8  COLLATE utf_polish_ci");
     mysql_query(mySQL,"SET CHARACTER SET utf8");
-
+			
 	return true;
 
 }
@@ -56,4 +56,9 @@ long long db_mysql_num_rows(void *result)
 void db_mysql_free_result(void *result)
 {
 	mysql_free_result((MYSQL_RES*)result);
+}
+
+long long db_mysql_insert_id()
+{
+	return mysql_insert_id(mySQL);
 }

@@ -9,6 +9,7 @@ long long db_mysql_num_rows(void *result);
 MYSQL_ROW db_mysql_fetch_row(MYSQL_RES *result);
 MYSQL_RES *db_mysql_result();
 void db_mysql_free_result(void *result);
+long long db_mysql_insert_id();
 
 
 #endif

@@ -37,7 +37,7 @@ bool db_check_right(const char *module, const char *action, int uid)
 	}
 	
 	char **row  = (char**)db_fetch_row(result);
-	query = wxString::Format(_("SELECT * FROM `%s`, `%s` WHERE %s.id_group = %s.id_group AND %s.id_user = '%d' AND %s.id_right='%s'"),TABLE_USER_GROUP, TABLE_GROUP_RIGHT,TABLE_USER_GROUP,TABLE_GROUP_RIGHT,TABLE_USER_GROUP,uid,TABLE_GROUP_RIGHT,row[FID_RIGHT_ID]);	
+	query = wxString::Format(_("SELECT * FROM `%s`, `%s` WHERE %s.id_group = %s.id_group AND %s.id_user = '%d' AND %s.id_right='%s'"),TABLE_USER_GROUP, TABLE_GROUP_RIGHT,TABLE_USER_GROUP,TABLE_GROUP_RIGHT,TABLE_USER_GROUP,uid,TABLE_GROUP_RIGHT,row[FI_RIGHT_ID]);	
 	db_free_result(result);
 	
 	if(!my_query(query))

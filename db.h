@@ -17,6 +17,7 @@
 #define TABLE_ITEM_TYPE			"item_type"
 #define TABLE_ITEM_FEATURE		"item_feature"
 #define TABLE_ITEM_TYPE_FEATURE	"item_type_feature"
+#define TABLE_ITEM_VALUE		"item_value"
 	
 // pola tabeli USER
 #define FI_USER_ID					0
@@ -138,6 +139,15 @@
 #define FN_ITEM_FEATURE_NAME	"id_name"
 
 
+// pola tabeli ITEM_VALUE
+#define FI_ITEM_VALUE_ID_ITEM		0
+#define FI_ITEM_VALUE_ID_FEATURE	1
+#define FI_ITEM_VALUE_VALUE			2
+#define FN_ITEM_VALUE_ID_ITEM		"id_item"
+#define FN_ITEM_VALUE_ID_FEATURE	"id_feature"
+#define FN_ITEM_VALUE_VALUE			"value"
+
+
 // pola tabeli ITEM_TYPE
 #define FI_ITEM_TYPE_ID 0
 #define FI_ITEM_TYPE_NAME 1
@@ -159,5 +169,6 @@ long long db_num_rows(void *result);
 void db_free_result(void *result);
 void db_history(int uid, const char *module, const char *action );
 bool my_query(wxString sql);
+int db_last_insert_id();
 
 #endif
