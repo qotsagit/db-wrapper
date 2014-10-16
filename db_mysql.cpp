@@ -27,6 +27,11 @@ int db_mysql_query(const char *query)
 	return mysql_query(mySQL,query);
 }
 
+int db_mysql_query(const char *query, unsigned long length)
+{
+	return mysql_real_query(mySQL,query,length);
+}
+
 const char *db_mysql_error()
 {
 	return mysql_error(mySQL);
@@ -61,4 +66,14 @@ void db_mysql_free_result(void *result)
 long long db_mysql_insert_id()
 {
 	return mysql_insert_id(mySQL);
+}
+
+unsigned long *db_mysql_fetch_lengths(void *result)
+{
+	return mysql_fetch_lengths((MYSQL_RES*)result);
+}
+
+unsigned long  db_mysql_escape_string(char *to ,const char *from, unsigned long len)
+{
+	return mysql_escape_string(to,from,len);
 }

@@ -30,6 +30,15 @@ int db_query(const char *query)
 	}
 }
 
+int db_query(const char *query, unsigned long length)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_query(query,length);
+		default:				return db_mysql_query(query,length);
+	}
+}
+
 void *db_fetch_row(void *result)
 {
 	switch(m_engine)
@@ -95,6 +104,25 @@ int db_last_insert_id()
 	}
 }
 
+unsigned long *db_fetch_lengths(void *result)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_fetch_lengths(result);
+		default:				return db_mysql_fetch_lengths(result);
+	}
+}
+
+unsigned long db_escape_string(char *to ,const char *from, unsigned long len)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_escape_string(to,from,len);
+		default:				return db_mysql_escape_string(to,from,len);
+	}
+}
+
+
 // taki ma³y wraper ¿eby nie pisaæ ci¹gle tego samego
 bool my_query(wxString sql)
 {
@@ -110,6 +138,23 @@ bool my_query(wxString sql)
 	
 	return true;
 }
+
+// taki ma³y wraper ¿eby nie pisaæ ci¹gle tego samego
+bool my_query(const char *sql, unsigned long length)
+{
+#ifdef DEBUG_SQL
+	wxMessageBox (sql);
+#endif
+	
+	if(db_query( sql, length)  != 0)
+	{
+		wxLogError(db_error());
+		return false;
+	}
+	
+	return true;
+}
+
 
 void db_history(int uid, const char *module, const char *action )
 {

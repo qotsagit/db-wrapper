@@ -19,6 +19,8 @@
 #define TABLE_ITEM_FEATURE		"item_feature"
 #define TABLE_ITEM_TYPE_FEATURE	"item_type_feature"
 #define TABLE_ITEM_VALUE		"item_value"
+#define TABLE_PICTURE			"picture"
+
 
 #define VIEW_LIGHT_ITEM			"_view_light_item"
 	
@@ -165,12 +167,22 @@
 #define FN_ITEM_TYPE_NAME	"name"
 #define FN_ITEM_TYPE_INFO	"info"
 
+// pola tabeli PICTURE
+#define FI_PICTURE_ID		0
+#define FI_PICTURE_NAME		1
+#define FI_PICTURE_INFO		2
+#define FI_PICTURE_DATA		3
+#define FN_PICTURE_ID		"id"
+#define FN_PICTURE_NAME		"name"
+#define FN_PICTURE_INFO		"info"
+#define FN_PICTURE_DATA		"data"
 
 
 
 void db_set_engine(int engine);
 bool db_connect(const char *host, const char *user, const char *password, const char *db);
 int db_query(const char *query);
+int db_query(const char *query, unsigned long length);
 void *db_fetch_row(void *result);
 void *db_result();
 const char *db_error();
@@ -179,6 +191,9 @@ long long db_num_rows(void *result);
 void db_free_result(void *result);
 void db_history(int uid, const char *module, const char *action );
 bool my_query(wxString sql);
+bool my_query(const char *sql, unsigned long length);
 int db_last_insert_id();
+unsigned long *db_fetch_lengths(void *result);
+unsigned long db_escape_string(char *to ,const char *from, unsigned long len);
 
 #endif

@@ -19,6 +19,7 @@
 #define MODULE_LIGHT "light"
 #define MODULE_SYMBOL_TYPE "symbol_type"
 #define MODULE_ITEM "item"
+#define MODULE_PICTURE "picture"
 	#define ACTION_NEW "new"
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
