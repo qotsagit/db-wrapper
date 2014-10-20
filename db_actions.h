@@ -16,7 +16,7 @@
 #define MODULE_AREA "area"
 #define MODULE_SEAWAY "seaway"
 #define MODULE_BATTERY "battery"
-#define MODULE_LIGHT "light"
+#define MODULE_SYMBOL "symbol"
 #define MODULE_SYMBOL_TYPE "symbol_type"
 #define MODULE_ITEM "item"
 #define MODULE_PICTURE "picture"
