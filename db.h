@@ -7,13 +7,14 @@
 #define TABLE_GROUP_RIGHT		"group_right"
 #define TABLE_USER_GROUP		"user_group"
 #define TABLE_RIGHT				"right"
-#define TABLE_SYMBOL			"symbol"
 #define TABLE_AREA				"area"
 #define TABLE_SEAWAY			"seaway"
 #define TABLE_HISTORY			"history"
-#define TABLE_LIGHT				"light"
-#define TABLE_LIGHT_ITEM		"light_item"
+#define TABLE_SYMBOL			"symbol"
+#define TABLE_SYMBOL_ITEM		"symbol_item"
 #define TABLE_SYMBOL_TYPE		"symbol_type"
+#define TABLE_SYMBOL_COLOR		"symbol_color"
+#define TABLE_SYMBOL_PICTURE	"symbol_picture"
 #define TABLE_ITEM				"item"
 #define TABLE_ITEM_TYPE			"item_type"
 #define TABLE_ITEM_FEATURE		"item_feature"
@@ -21,8 +22,8 @@
 #define TABLE_ITEM_VALUE		"item_value"
 #define TABLE_PICTURE			"picture"
 
-
-#define VIEW_LIGHT_ITEM			"_view_light_item"
+//nazwy widoków
+#define VIEW_SYMBOL_ITEM			"_view_symbol_item"
 	
 // pola tabeli USER
 #define FI_USER_ID					0
@@ -69,17 +70,22 @@
 #define FI_SYMBOL_ID				0
 #define FI_SYMBOL_ID_AREA			1
 #define FI_SYMBOL_ID_SEAWAY			2
-#define FI_SYMBOL_ID_TYPE			3
+#define FI_SYMBOL_ID_SYMBOL_TYPE	3
 #define FI_SYMBOL_NUMBER			4
 #define FI_SYMBOL_LON				5
 #define FI_SYMBOL_LAT				6
+#define FI_SYMBOL_NAME				7
+#define FI_SYMBOL_INFO				8
 #define FN_SYMBOL_ID				"id"
 #define FN_SYMBOL_ID_AREA			"id_area"
 #define FN_SYMBOL_ID_SEAWAY			"id_seaway"
-#define FN_SYMBOL_ID_TYPE			"id_type"
+#define FN_SYMBOL_ID_SYMBOL_TYPE	"id_type"
 #define FN_SYMBOL_NUMBER			"number"
 #define FN_SYMBOL_LON				"lon"
 #define FN_SYMBOL_LAT				"lat"
+#define FN_SYMBOL_NAME				"name"
+#define FN_SYMBOL_INFO				"info"
+
 
 // pola tabeli AREA
 #define FI_AREA_ID			0
@@ -111,21 +117,13 @@
 #define FN_HISTORY_ID_USER		"id_user"
 #define FN_HISTORY_ID_RIGHT		"id_right"
 
-//pola tabeli LIGHT
-#define FI_LIGHT_ID		0
-#define FI_LIGHT_NAME	1
-#define FI_LIGHT_INFO	2
-#define FN_LIGHT_ID		"id"
-#define FN_LIGHT_NAME	"name"
-#define FN_LIGHT_INFO	"info"
-
-//pola tabeli LIGHT_ITEM
-#define FI_LIGHT_ITEM_ID		0
-#define FI_LIGHT_ITEM_ID_LIGHT	1
-#define FI_LIGHT_ITEM_ID_ITEM	2
-#define FN_LIGHT_ITEM_ID		"id"
-#define FN_LIGHT_ITEM_ID_LIGHT	"id_light"
-#define FN_LIGHT_ITEM_ID_ITEM	"id_item"
+//pola tabeli SYMBOL_ITEM
+#define FI_SYMBOL_ITEM_ID		 0
+#define FI_SYMBOL_ITEM_ID_SYMBOL 1
+#define FI_SYMBOL_ITEM_ID_ITEM	 2
+#define FN_SYMBOL_ITEM_ID		 "id"
+#define FN_SYMBOL_ITEM_ID_SYMBOL "id_symbol"
+#define FN_SYMBOL_ITEM_ID_ITEM	 "id_item"
 
 //pola tabeli ITEM
 #define FI_ITEM_ID				0
@@ -177,6 +175,29 @@
 #define FN_PICTURE_INFO		"info"
 #define FN_PICTURE_DATA		"data"
 
+// pola tabeli SYMBOL_COLOR
+#define FI_SYMBOL_COLOR_ID_SYMBOL	0
+#define FI_SYMBOL_COLOR_COLOR		1
+#define FN_SYMBOL_COLOR_ID_SYMBOL	"id_symbol"
+#define FN_SYMBOL_COLOR_COLOR		"color"
+
+// pola tabeli SYMBOL_PICTURE
+#define FI_SYMBOL_PICTURE_ID_SYMBOL		0
+#define FI_SYMBOL_PICTURE_ID_PICTURE	1
+#define FN_SYMBOL_PICTURE_ID_SYMBOL		"id_symbol"
+#define FN_SYMBOL_PICTURE_ID_PICTURE	"id_picture"
+
+// pola widoku _VIEW_SYMBOL_TYPE
+#define FI_VIEW_SYMBOL_ITEM_ID			0
+#define FI_VIEW_SYMBOL_ITEM_ID_SYMBOL	1
+#define FI_VIEW_SYMBOL_ITEM_ITEM_TYPE	2
+#define FI_VIEW_SYMBOL_ITEM_NAME		3
+#define FI_VIEW_SYMBOL_ITEM_TYPE		4
+#define FN_VIEW_SYMBOL_ITEM_ID			"id"
+#define FN_VIEW_SYMBOL_ITEM_ID_SYMBOL	"id_symbol"
+#define FN_VIEW_SYMBOL_ITEM_ITEM_TYPE	"item_type"
+#define FN_VIEW_SYMBOL_ITEM_NAME		"name"
+#define FN_VIEW_SYMBOL_ITEM_TYPE		"type"
 
 
 void db_set_engine(int engine);
