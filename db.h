@@ -74,8 +74,10 @@
 #define FI_SYMBOL_NUMBER			4
 #define FI_SYMBOL_LON				5
 #define FI_SYMBOL_LAT				6
-#define FI_SYMBOL_NAME				7
-#define FI_SYMBOL_INFO				8
+#define FI_SYMBOL_COLOR				7
+#define FI_SYMBOL_COVERAGE			8
+#define FI_SYMBOL_NAME				9
+#define FI_SYMBOL_INFO				10
 #define FN_SYMBOL_ID				"id"
 #define FN_SYMBOL_ID_AREA			"id_area"
 #define FN_SYMBOL_ID_SEAWAY			"id_seaway"
@@ -85,6 +87,8 @@
 #define FN_SYMBOL_LAT				"lat"
 #define FN_SYMBOL_NAME				"name"
 #define FN_SYMBOL_INFO				"info"
+#define FN_SYMBOL_COLOR				"color"
+#define FN_SYMBOL_COVERAGE			"coverage"
 
 
 // pola tabeli AREA
