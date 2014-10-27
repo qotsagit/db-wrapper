@@ -13,6 +13,7 @@
 #define TABLE_SYMBOL			"symbol"
 #define TABLE_SYMBOL_ITEM		"symbol_item"
 #define TABLE_SYMBOL_TYPE		"symbol_type"
+#define TABLE_SYMBOL_LIGHT		"symbol_light"
 #define TABLE_SYMBOL_COLOR		"symbol_color"
 #define TABLE_SYMBOL_PICTURE	"symbol_picture"
 #define TABLE_ITEM				"item"
