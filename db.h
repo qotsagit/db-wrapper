@@ -14,7 +14,6 @@
 #define TABLE_SYMBOL_ITEM		"symbol_item"
 #define TABLE_SYMBOL_TYPE		"symbol_type"
 #define TABLE_SYMBOL_LIGHT		"symbol_light"
-#define TABLE_SYMBOL_COLOR		"symbol_color"
 #define TABLE_SYMBOL_PICTURE	"symbol_picture"
 #define TABLE_ITEM				"item"
 #define TABLE_ITEM_TYPE			"item_type"
@@ -75,10 +74,9 @@
 #define FI_SYMBOL_NUMBER			4
 #define FI_SYMBOL_LON				5
 #define FI_SYMBOL_LAT				6
-#define FI_SYMBOL_COLOR				7
-#define FI_SYMBOL_COVERAGE			8
-#define FI_SYMBOL_NAME				9
-#define FI_SYMBOL_INFO				10
+#define FI_SYMBOL_CHARACTERISTIC	7
+#define FI_SYMBOL_NAME				8
+#define FI_SYMBOL_INFO				9
 #define FN_SYMBOL_ID				"id"
 #define FN_SYMBOL_ID_AREA			"id_area"
 #define FN_SYMBOL_ID_SEAWAY			"id_seaway"
@@ -86,11 +84,9 @@
 #define FN_SYMBOL_NUMBER			"number"
 #define FN_SYMBOL_LON				"lon"
 #define FN_SYMBOL_LAT				"lat"
+#define FN_SYMBOL_CHARACTERISTIC	"characteristic"
 #define FN_SYMBOL_NAME				"name"
 #define FN_SYMBOL_INFO				"info"
-#define FN_SYMBOL_COLOR				"color"
-#define FN_SYMBOL_COVERAGE			"coverage"
-
 
 // pola tabeli AREA
 #define FI_AREA_ID			0
@@ -181,16 +177,29 @@
 #define FN_PICTURE_DATA		"data"
 
 // pola tabeli SYMBOL_COLOR
-#define FI_SYMBOL_COLOR_ID_SYMBOL	0
-#define FI_SYMBOL_COLOR_COLOR		1
-#define FN_SYMBOL_COLOR_ID_SYMBOL	"id_symbol"
-#define FN_SYMBOL_COLOR_COLOR		"color"
+//#define FI_SYMBOL_COLOR_ID_SYMBOL	0
+//#define FI_SYMBOL_COLOR_COLOR		1
+//#define FN_SYMBOL_COLOR_ID_SYMBOL	"id_symbol"
+//#define FN_SYMBOL_COLOR_COLOR		"color"
 
 // pola tabeli SYMBOL_PICTURE
 #define FI_SYMBOL_PICTURE_ID_SYMBOL		0
 #define FI_SYMBOL_PICTURE_ID_PICTURE	1
 #define FN_SYMBOL_PICTURE_ID_SYMBOL		"id_symbol"
 #define FN_SYMBOL_PICTURE_ID_PICTURE	"id_picture"
+
+// pola tabeli SYMBOL_LIGHT
+#define FI_SYMBOL_LIGHT_ID_SYMBOL		0
+#define FI_SYMBOL_LIGHT_COLOR			1
+#define FI_SYMBOL_LIGHT_COVERAGE		2
+#define FI_SYMBOL_LIGHT_SECTOR_FROM		3
+#define FI_SYMBOL_LIGHT_SECTOR_TO		4
+#define FN_SYMBOL_LIGHT_ID_SYMBOL		"id_symbol"
+#define FN_SYMBOL_LIGHT_COLOR			"color"
+#define FN_SYMBOL_LIGHT_COVERAGE		"coverage"
+#define FN_SYMBOL_LIGHT_SECTOR_FROM		"sector_from"
+#define FN_SYMBOL_LIGHT_SECTOR_TO		"sector_to"
+
 
 // pola widoku _VIEW_SYMBOL_TYPE
 #define FI_VIEW_SYMBOL_ITEM_ID			0
