@@ -23,6 +23,7 @@
 	#define ACTION_NEW "new"
 	#define ACTION_EDIT "edit"
 	#define ACTION_DELETE "delete"
+	#define ACTION_PROPERTIES "properties"
 
 #endif
 
