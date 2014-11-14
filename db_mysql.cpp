@@ -5,10 +5,10 @@
 
 MYSQL *mySQL = NULL;
 
-bool db_mysql_connect(const char *host, const char *user, const char *password, const char *db)
+bool db_mysql_connect(const char *host, const char *user, const char *password, const char *db, int port )
 {
 	mySQL = mysql_init(mySQL);
-	mysql_real_connect(mySQL, host, user, password, db, 3306, NULL, 0);
+	mysql_real_connect(mySQL, host, user, password, db, port, NULL, 0);
     
     mysql_select_db(mySQL,db);
 

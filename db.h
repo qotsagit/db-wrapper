@@ -236,7 +236,7 @@
 
 
 void db_set_engine(int engine);
-bool db_connect(const char *host, const char *user, const char *password, const char *db);
+bool db_connect(const char *host, const char *user, const char *password, const char *db, int port);
 int db_query(const char *query);
 int db_query(const char *query, unsigned long length);
 void *db_fetch_row(void *result);

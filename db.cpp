@@ -9,13 +9,13 @@
 
 int m_engine = DB_ENGINE_MYSQL;
 
-bool db_connect(const char *host, const char *user, const char *password, const char *db)
+bool db_connect(const char *host, const char *user, const char *password, const char *db,int port)
 {
 	
 	switch(m_engine)
 	{
-		case DB_ENGINE_MYSQL:	return db_mysql_connect(host,user,password,db);
-		default:				return db_mysql_connect(host,user,password,db);
+		case DB_ENGINE_MYSQL:	return db_mysql_connect(host,user,password,db,port);
+		default:				return db_mysql_connect(host,user,password,db,port);
 
 	}
 
