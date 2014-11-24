@@ -7,8 +7,10 @@ MYSQL *mySQL = NULL;
 
 bool db_mysql_connect(const char *host, const char *user, const char *password, const char *db, int port )
 {
-	mySQL = mysql_init(mySQL);
+	if(mySQL == NULL)
+		mySQL = mysql_init(mySQL);
 	mysql_real_connect(mySQL, host, user, password, db, port, NULL, 0);
+	mysql_ssl_set(mySQL, "client-key.pem", "client-cert.pem", "ca-cert.pem", NULL, "DHE-RSA-AES256-SHA"); // zawsze zwraca zero
     
     mysql_select_db(mySQL,db);
 
@@ -20,6 +22,15 @@ bool db_mysql_connect(const char *host, const char *user, const char *password, 
 			
 	return true;
 
+}
+
+void db_mysql_close()
+{
+	if(mySQL)
+	{
+		mysql_close(mySQL);
+		mySQL = NULL;
+	}
 }
 
 int db_mysql_query(const char *query)

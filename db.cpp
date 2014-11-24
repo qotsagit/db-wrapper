@@ -21,6 +21,16 @@ bool db_connect(const char *host, const char *user, const char *password, const 
 
 }
 
+void db_close()
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_close();
+		default:				return db_mysql_close();
+	}
+
+}
+
 int db_query(const char *query)
 {
 	switch(m_engine)
