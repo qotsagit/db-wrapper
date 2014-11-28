@@ -1,6 +1,8 @@
+#ifdef WIN32
 #include <Windows.h>
+#endif
 #include <stdio.h>
-#include "mysql.h"
+#include "mysql/mysql.h"
 #include "db_mysql.h"
 
 MYSQL *mySQL = NULL;

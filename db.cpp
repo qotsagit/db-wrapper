@@ -1,7 +1,10 @@
-#include <wx/wx.h>
+
+#ifdef WIN32
 #include <Windows.h>
+#include <wx/wx.h>
+#endif
 #include <stdio.h>
-#include "mysql.h"
+#include "mysql/mysql.h"
 #include "db.h"
 #include "db_conf.h"
 #include "db_mysql.h"
@@ -133,51 +136,3 @@ unsigned long db_escape_string(char *to ,const char *from, unsigned long len)
 }
 
 
-// taki ma³y wraper ¿eby nie pisaæ ci¹gle tego samego
-bool my_query(wxString sql)
-{
-#ifdef DEBUG_SQL
-	wxMessageBox (sql);
-#endif
-	
-	if(db_query(sql.mb_str(wxConvUTF8))  != 0)
-	{
-		wxLogError(db_error());
-		return false;
-	}
-	
-	return true;
-}
-
-// taki ma³y wraper ¿eby nie pisaæ ci¹gle tego samego
-bool my_query(const char *sql, unsigned long length)
-{
-#ifdef DEBUG_SQL
-	wxMessageBox (sql);
-#endif
-	
-	if(db_query( sql, length)  != 0)
-	{
-		wxLogError(db_error());
-		return false;
-	}
-	
-	return true;
-}
-
-
-void db_history(int uid, const char *module, const char *action )
-{
-	wxString sql = wxString::Format(_("SELECT * FROM `%s` WHERE name='%s_%s'"),TABLE_RIGHT,module,action);
-	my_query(sql);
-
-	void *result = db_result();
-	char **row = (char**)db_fetch_row(result);
-	
-	sql = wxString::Format(_("INSERT INTO `%s` SET id_user='%d', id_right='%s'"),TABLE_HISTORY, uid, row[FI_RIGHT_ID]);
-	my_query(sql);
-		
-
-	db_free_result(result);
-
-}
