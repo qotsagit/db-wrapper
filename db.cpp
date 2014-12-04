@@ -2,9 +2,12 @@
 #ifdef WIN32
 #include <Windows.h>
 #include <wx/wx.h>
+#include "mysql.h"
 #endif
 #include <stdio.h>
+#ifdef linux
 #include "mysql/mysql.h"
+#endif
 #include "db.h"
 #include "db_conf.h"
 #include "db_mysql.h"

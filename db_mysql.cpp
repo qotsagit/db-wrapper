@@ -1,8 +1,11 @@
 #ifdef WIN32
 #include <Windows.h>
+#include "mysql.h"
 #endif
 #include <stdio.h>
+#ifdef linux
 #include "mysql/mysql.h"
+#endif
 #include "db_mysql.h"
 
 MYSQL *mySQL = NULL;
@@ -11,6 +14,7 @@ bool db_mysql_connect(const char *host, const char *user, const char *password, 
 {
 	if(mySQL == NULL)
 		mySQL = mysql_init(mySQL);
+	mysql_options(mySQL,MYSQL_OPT_RECONNECT,"1");
 	mysql_real_connect(mySQL, host, user, password, db, port, NULL, 0);
 	mysql_ssl_set(mySQL, "client-key.pem", "client-cert.pem", "ca-cert.pem", NULL, "DHE-RSA-AES256-SHA"); // zawsze zwraca zero
     
