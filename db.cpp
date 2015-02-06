@@ -138,4 +138,20 @@ unsigned long db_escape_string(char *to ,const char *from, unsigned long len)
 	}
 }
 
+void *db_get()
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_get();
+		default:				return db_mysql_get();
+	}
+}
 
+void db_set(void *db)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_set((MYSQL*)db);
+		default:				return db_mysql_set((MYSQL*)db);
+	}
+}

@@ -30,6 +30,16 @@ bool db_mysql_connect(const char *host, const char *user, const char *password, 
 
 }
 
+MYSQL *db_mysql_get()
+{
+	return mySQL;
+}
+
+void db_mysql_set(MYSQL *mySQL)
+{
+	mySQL = mySQL;
+}
+
 void db_mysql_close()
 {
 	if(mySQL)
