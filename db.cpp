@@ -1,59 +1,91 @@
-
-#ifdef WIN32
-#include <Windows.h>
-#include <wx/wx.h>
-#include "mysql.h"
-#endif
-#include <stdio.h>
-#ifdef linux
-#include "mysql/mysql.h"
-#endif
 #include "db.h"
 #include "db_conf.h"
 #include "db_mysql.h"
 
 
 int m_engine = DB_ENGINE_MYSQL;
-
-bool db_connect(const char *host, const char *user, const char *password, const char *db,int port)
-{
-	
-	switch(m_engine)
-	{
-		case DB_ENGINE_MYSQL:	return db_mysql_connect(host,user,password,db,port);
-		default:				return db_mysql_connect(host,user,password,db,port);
-
-	}
-
-}
-
-void db_close()
+void *db_init(void *_db)
 {
 	switch(m_engine)
 	{
-		case DB_ENGINE_MYSQL:	return db_mysql_close();
-		default:				return db_mysql_close();
+		case DB_ENGINE_MYSQL:	return db_mysql_init((MYSQL*)_db);
+		default:				return db_mysql_init((MYSQL*)_db);
 	}
-
 }
 
-int db_query(const char *query)
+bool db_connect(void *_db,const char *host, const char *user, const char *password, const char *db,int port)
 {
 	switch(m_engine)
 	{
-		case DB_ENGINE_MYSQL:	return db_mysql_query(query);
-		default:				return db_mysql_query(query);
+		case DB_ENGINE_MYSQL:	return db_mysql_connect((MYSQL*)_db,host,user,password,db,port);
+		default:				return db_mysql_connect((MYSQL*)_db,host,user,password,db,port);
 	}
 }
 
-int db_query(const char *query, unsigned long length)
+void db_close(void *_db)
 {
 	switch(m_engine)
 	{
-		case DB_ENGINE_MYSQL:	return db_mysql_query(query,length);
-		default:				return db_mysql_query(query,length);
+		case DB_ENGINE_MYSQL:	return db_mysql_close((MYSQL*)_db);
+		default:				return db_mysql_close((MYSQL*)_db);
 	}
 }
+
+int db_query(void *_db,const char *query)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_query((MYSQL*)_db,query);
+		default:				return db_mysql_query((MYSQL*)_db,query);
+	}
+}
+
+int db_query(void *_db,const char *query, unsigned long length)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_query((MYSQL*)_db,query,length);
+		default:				return db_mysql_query((MYSQL*)_db,query,length);
+	}
+}
+
+void *db_result(void *_db)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_result((MYSQL*)_db);
+		default :				return db_mysql_result((MYSQL*)_db);
+	}
+}
+
+const char *db_error(void *_db)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_error((MYSQL*)_db);
+		default:				return db_mysql_error((MYSQL*)_db);
+	}
+}
+
+int db_field_count(void *_db)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_field_count((MYSQL*)_db);
+		default:				return db_mysql_field_count((MYSQL*)_db);
+	}
+}
+
+int db_last_insert_id(void *_db)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_insert_id((MYSQL*)_db);
+		default:				return db_mysql_insert_id((MYSQL*)_db);
+	}
+}
+
+
 
 void *db_fetch_row(void *result)
 {
@@ -64,33 +96,6 @@ void *db_fetch_row(void *result)
 	}
 }
 
-void *db_result()
-{
-	switch(m_engine)
-	{
-		case DB_ENGINE_MYSQL:	return db_mysql_result();
-		default :				return db_mysql_result();
-	}
-}
-
-const char *db_error()
-{
-	switch(m_engine)
-	{
-		case DB_ENGINE_MYSQL:	return db_mysql_error();
-		default:				return db_mysql_error();
-	}
-}
-
-int db_field_count()
-{
-	switch(m_engine)
-	{
-		case DB_ENGINE_MYSQL:	return db_mysql_field_count();
-		default:				return db_mysql_field_count();
-	}
-
-}
 
 long long db_num_rows(void *result)
 {
@@ -111,14 +116,6 @@ void db_free_result(void *result)
 	}
 }
 
-int db_last_insert_id()
-{
-	switch(m_engine)
-	{
-		case DB_ENGINE_MYSQL:	return db_mysql_insert_id();
-		default:				return db_mysql_insert_id();
-	}
-}
 
 unsigned long *db_fetch_lengths(void *result)
 {
@@ -138,20 +135,13 @@ unsigned long db_escape_string(char *to ,const char *from, unsigned long len)
 	}
 }
 
-void *db_get()
+
+CDB::CDB()
 {
-	switch(m_engine)
-	{
-		case DB_ENGINE_MYSQL:	return db_mysql_get();
-		default:				return db_mysql_get();
-	}
+	mySQL = (MYSQL*)db_init(mySQL);
 }
 
-void db_set(void *db)
+bool CDB::Connect(const char *host, const char *user, const char *password, const char *db, int port)
 {
-	switch(m_engine)
-	{
-		case DB_ENGINE_MYSQL:	return db_mysql_set((MYSQL*)db);
-		default:				return db_mysql_set((MYSQL*)db);
-	}
+	return db_connect(mySQL, host, user, password, db,port);
 }

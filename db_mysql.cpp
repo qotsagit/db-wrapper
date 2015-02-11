@@ -8,12 +8,13 @@
 #endif
 #include "db_mysql.h"
 
-MYSQL *mySQL = NULL;
-
-bool db_mysql_connect(const char *host, const char *user, const char *password, const char *db, int port )
+MYSQL *db_mysql_init(MYSQL *mySQL)
 {
-	if(mySQL == NULL)
-		mySQL = mysql_init(mySQL);
+	return  mysql_init(mySQL);
+}
+
+bool db_mysql_connect(MYSQL *mySQL,const char *host, const char *user, const char *password, const char *db, int port )
+{
 	mysql_options(mySQL,MYSQL_OPT_RECONNECT,"1");
 	mysql_real_connect(mySQL, host, user, password, db, port, NULL, 0);
 	mysql_ssl_set(mySQL, "client-key.pem", "client-cert.pem", "ca-cert.pem", NULL, "DHE-RSA-AES256-SHA"); // zawsze zwraca zero
@@ -30,17 +31,7 @@ bool db_mysql_connect(const char *host, const char *user, const char *password, 
 
 }
 
-MYSQL *db_mysql_get()
-{
-	return mySQL;
-}
-
-void db_mysql_set(MYSQL *mySQL)
-{
-	mySQL = mySQL;
-}
-
-void db_mysql_close()
+void db_mysql_close(MYSQL *mySQL)
 {
 	if(mySQL)
 	{
@@ -49,35 +40,41 @@ void db_mysql_close()
 	}
 }
 
-int db_mysql_query(const char *query)
+int db_mysql_query(MYSQL *mySQL,const char *query)
 {
 	return mysql_query(mySQL,query);
 }
 
-int db_mysql_query(const char *query, unsigned long length)
+int db_mysql_query(MYSQL *mySQL,const char *query, unsigned long length)
 {
 	return mysql_real_query(mySQL,query,length);
 }
 
-const char *db_mysql_error()
+const char *db_mysql_error(MYSQL *mySQL)
 {
 	return mysql_error(mySQL);
 }
 
-MYSQL_RES *db_mysql_result()
+MYSQL_RES *db_mysql_result(MYSQL *mySQL)
 {
 	return mysql_store_result(mySQL);
 }
+
+int db_mysql_field_count(MYSQL *mySQL)
+{
+	return mysql_field_count(mySQL);
+}
+
+long long db_mysql_insert_id(MYSQL *mySQL)
+{
+	return mysql_insert_id(mySQL);
+}
+
 
 MYSQL_ROW db_mysql_fetch_row(MYSQL_RES *result)
 {
 	return mysql_fetch_row(result);
 
-}
-
-int db_mysql_field_count()
-{
-	return mysql_field_count(mySQL);
 }
 
 long long db_mysql_num_rows(void *result)
@@ -90,10 +87,6 @@ void db_mysql_free_result(void *result)
 	mysql_free_result((MYSQL_RES*)result);
 }
 
-long long db_mysql_insert_id()
-{
-	return mysql_insert_id(mySQL);
-}
 
 unsigned long *db_mysql_fetch_lengths(void *result)
 {

@@ -10,19 +10,20 @@
 #include "mysql/mysql.h"
 #endif
 
-bool db_mysql_connect(const char *host, const char *user, const char *password, const char *db, int port );
-void db_mysql_close();
-int db_mysql_query(const char *query);
-int db_mysql_query(const char *query, unsigned long length);
-const char *db_mysql_error();
-int db_mysql_field_count();
+MYSQL *db_mysql_init(MYSQL *mySQL);
+bool db_mysql_connect(MYSQL *mySQL,const char *host, const char *user, const char *password, const char *db, int port );
+void db_mysql_close(MYSQL *mySQL);
+int db_mysql_query(MYSQL *mySQL,const char *query);
+int db_mysql_query(MYSQL *mySQL,const char *query, unsigned long length);
+const char *db_mysql_error(MYSQL *mySQL);
+MYSQL_RES *db_mysql_result(MYSQL *mySQL);
+int db_mysql_field_count(MYSQL *mySQL);
+long long db_mysql_insert_id(MYSQL *mySQL);
+
 long long db_mysql_num_rows(void *result);
 MYSQL_ROW db_mysql_fetch_row(MYSQL_RES *result);
-MYSQL_RES *db_mysql_result();
 void db_mysql_free_result(void *result);
-long long db_mysql_insert_id();
 unsigned long *db_mysql_fetch_lengths(void *result);
 unsigned long  db_mysql_escape_string(char *to ,const char *from, unsigned long len);
-MYSQL *db_mysql_get();
-void db_mysql_set(MYSQL *mySQL);
+
 #endif
