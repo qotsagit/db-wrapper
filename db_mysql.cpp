@@ -97,3 +97,8 @@ unsigned long  db_mysql_escape_string(char *to ,const char *from, unsigned long 
 {
 	return mysql_escape_string(to,from,len);
 }
+
+int  db_mysql_ping(MYSQL *mySQL)
+{
+	return mysql_ping(mySQL);
+}

@@ -19,6 +19,7 @@ const char *db_mysql_error(MYSQL *mySQL);
 MYSQL_RES *db_mysql_result(MYSQL *mySQL);
 int db_mysql_field_count(MYSQL *mySQL);
 long long db_mysql_insert_id(MYSQL *mySQL);
+int db_mysql_ping(MYSQL *mySQL);
 
 long long db_mysql_num_rows(void *result);
 MYSQL_ROW db_mysql_fetch_row(MYSQL_RES *result);

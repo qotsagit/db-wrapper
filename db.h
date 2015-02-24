@@ -18,6 +18,7 @@ void db_close(void *_db);
 int db_query(void *_db,const char *query);
 int db_query(void *_db,const char *query, unsigned long length);
 void *db_result(void *_db);
+int db_ping(void *_db);
 const char *db_error(void *_db);
 int db_field_count(void *_db);
 int db_last_insert_id(void *_db);

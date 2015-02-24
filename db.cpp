@@ -85,7 +85,14 @@ int db_last_insert_id(void *_db)
 	}
 }
 
-
+int db_ping(void *_db)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_ping((MYSQL*)_db);
+		default:				return db_mysql_ping((MYSQL*)_db);
+	}
+}
 
 void *db_fetch_row(void *result)
 {
@@ -134,6 +141,7 @@ unsigned long db_escape_string(char *to ,const char *from, unsigned long len)
 		default:				return db_mysql_escape_string(to,from,len);
 	}
 }
+
 
 
 CDB::CDB()
