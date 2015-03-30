@@ -15,8 +15,8 @@ MYSQL *db_mysql_init(MYSQL *mySQL)
 
 bool db_mysql_connect(MYSQL *mySQL,const char *host, const char *user, const char *password, const char *db, int port )
 {
-	mysql_real_connect(mySQL, host, user, password, db, port, NULL, 0);
 	mysql_options(mySQL,MYSQL_OPT_RECONNECT,"1");
+	mysql_real_connect(mySQL, host, user, password, db, port, NULL, 0);
 	mysql_ssl_set(mySQL, "client-key.pem", "client-cert.pem", "ca-cert.pem", NULL, "DHE-RSA-AES256-SHA"); // zawsze zwraca zero
     
     mysql_select_db(mySQL,db);
