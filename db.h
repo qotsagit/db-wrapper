@@ -28,19 +28,4 @@ void db_free_result(void *result);
 unsigned long *db_fetch_lengths(void *result);
 unsigned long db_escape_string(char *to ,const char *from, unsigned long len);
 
-
-class CDB
-{
-
-	MYSQL *mySQL;
-
-public:
-		CDB();
-		bool Connect(const char *host, const char *user, const char *password, const char *db, int port);
-		int Query(const char *query);
-		int Query(const char *query, unsigned long length);
-
-
-};
-
 #endif

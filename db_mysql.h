@@ -11,6 +11,7 @@
 #endif
 
 MYSQL *db_mysql_init(MYSQL *mySQL);
+void db_mysql_log(const char *format ,... );
 bool db_mysql_connect(MYSQL *mySQL,const char *host, const char *user, const char *password, const char *db, int port );
 void db_mysql_close(MYSQL *mySQL);
 int db_mysql_query(MYSQL *mySQL,const char *query);

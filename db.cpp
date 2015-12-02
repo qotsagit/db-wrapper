@@ -141,15 +141,3 @@ unsigned long db_escape_string(char *to ,const char *from, unsigned long len)
 		default:				return db_mysql_escape_string(to,from,len);
 	}
 }
-
-
-
-CDB::CDB()
-{
-	mySQL = (MYSQL*)db_init(mySQL);
-}
-
-bool CDB::Connect(const char *host, const char *user, const char *password, const char *db, int port)
-{
-	return db_connect(mySQL, host, user, password, db,port);
-}
