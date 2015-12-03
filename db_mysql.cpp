@@ -79,6 +79,11 @@ const char *db_mysql_error(MYSQL *mySQL)
 	return mysql_error(mySQL);
 }
 
+int db_mysql_errno(MYSQL *mySQL)
+{
+	return mysql_errno(mySQL);
+}
+
 MYSQL_RES *db_mysql_result(MYSQL *mySQL)
 {
 	return mysql_store_result(mySQL);
@@ -122,4 +127,9 @@ unsigned long  db_mysql_escape_string(char *to ,const char *from, unsigned long 
 int  db_mysql_ping(MYSQL *mySQL)
 {
 	return mysql_ping(mySQL);
+}
+
+int db_mysql_select(MYSQL *mySQL,const char *db_name)
+{
+	return mysql_select_db(mySQL,db_name);
 }

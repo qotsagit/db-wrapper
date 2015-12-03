@@ -13,6 +13,16 @@ void *db_init(void *_db)
 	}
 }
 
+int db_select(void *_db, const char *db_name)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_select((MYSQL*)_db,db_name);
+		default:				return db_mysql_select((MYSQL*)_db,db_name);
+	}
+
+}
+
 bool db_connect(void *_db,const char *host, const char *user, const char *password, const char *db,int port)
 {
 	switch(m_engine)
@@ -55,6 +65,15 @@ void *db_result(void *_db)
 	{
 		case DB_ENGINE_MYSQL:	return db_mysql_result((MYSQL*)_db);
 		default :				return db_mysql_result((MYSQL*)_db);
+	}
+}
+
+int db_errno(void *_db)
+{
+	switch(m_engine)
+	{
+		case DB_ENGINE_MYSQL:	return db_mysql_errno((MYSQL*)_db);
+		default:				return db_mysql_errno((MYSQL*)_db);
 	}
 }
 

@@ -12,6 +12,8 @@
 #endif
 
 void *db_init(void *_db);
+int db_select(void *_db,const char *db_name);
+
 void db_set_engine(int engine);
 bool db_connect(void *_db,const char *host, const char *user, const char *password, const char *db, int port);
 void db_close(void *_db);
@@ -20,6 +22,7 @@ int db_query(void *_db,const char *query, unsigned long length);
 void *db_result(void *_db);
 int db_ping(void *_db);
 const char *db_error(void *_db);
+int db_errno(void *_db);
 int db_field_count(void *_db);
 int db_last_insert_id(void *_db);
 void *db_fetch_row(void *result);
